@@ -60,7 +60,15 @@ router.get("/inventory", async (req, res) => {
       },
       { $unwind: "$supplierDetails" },
       { $sort: { totalInventoryValue: -1 } }, // Sorting by highest value
-    ]);
+{
+  $project: {
+    "items.__v": 0,
+    "supplierDetails.__v": 0,
+    "items.supplier_id": 0 
+  }
+}
+    ])
+
     res.json(results);
   } catch (err) {
     res.status(500).json({ error: err.message });

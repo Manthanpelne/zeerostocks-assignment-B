@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const inventoryRoutes = require("./routes/inventory")
+const inventoryRoutes = require("./routes/Inventory")
 
 
 const app = express();
