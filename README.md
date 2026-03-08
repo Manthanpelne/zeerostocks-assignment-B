@@ -30,9 +30,20 @@ I chose **MongoDB** for this assignment for two primary reasons:
 We can create a **Single Field Ascending Index** on the `supplier_id` field within the `Inventory` collection as given below:
 ```javascript
 inventorySchema.index({ supplier_id: 1 });
+```
 
 Without indexing, when we run our aggregation (especially the $group or $lookup stages), It looks at every single document in our inventory collection to see which ones match a specific supplier_id.
 With the indexing, MongoDB performs index scan. It looks at a sorted B-Tree structure of IDs, which allows it to find the matching records almost instantly. 
 This will helps us in database performance optimization, faster data retrieval output.
 
+
+## ⚙️ How to Run
+   - `npm install`
+   - `npm run server`
+
+
+
+## Environment Variables
+ 1. **MONGO_URI** - ***********
+ 2. **PORT** - ****
 

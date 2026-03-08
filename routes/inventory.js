@@ -9,6 +9,7 @@ router.post("/supplier", async (req, res) => {
     await supplier.save();
     res.status(201).json(supplier);
   } catch (err) {
+      console.log("error",err)
     res.status(400).json({ error: err.message });
   }
 });
@@ -27,6 +28,7 @@ router.post("/inventory", async (req, res) => {
     await item.save();
     res.status(201).json(item);
   } catch (err) {
+    console.log("error",err)
     res.status(400).json({ error: err.message });
   }
 });
@@ -71,6 +73,7 @@ router.get("/inventory", async (req, res) => {
 
     res.json(results);
   } catch (err) {
+      console.log("error",err)
     res.status(500).json({ error: err.message });
   }
 });
